@@ -27,17 +27,17 @@ def augment_images(images, labels):
     augment(images, labels, _flip_horizontally, flip_horizontally)
     augment(images, labels, _flip_vertically, flip_vertically)
     augment(images, labels, _rotate_180, rotate180)
-    augment(images, labels, _rotate_arrows)
+    augment_arrows(images, labels, _rotate_arrows)
 
     return images, labels
 
 
-def augment(images, labels, list, method):
+def augment(images, labels, list_of_pairs, method):
     new_images = []
     new_labels = []
 
     for image, label in zip(images, labels):
-        for first, second in list:
+        for first, second in list_of_pairs:
             if label == str(first):
                 new_images.append(method(image))
                 new_labels.append(str(second))
@@ -49,14 +49,14 @@ def augment(images, labels, list, method):
     labels.extend(new_labels)
 
 
-def augment_arrows(images, labels, list):
+def augment_arrows(images, labels, list_of_arrows):
     new_images = []
     new_labels = []
 
     for image, label in zip(images, labels):
-        for first_cat, first_angle in list:
+        for first_cat, first_angle in list_of_arrows:
             if str(first_cat) == label:
-                for second_cat, second_angle in list:
+                for second_cat, second_angle in list_of_arrows:
                     if first_cat == second_cat:
                         continue
 
@@ -138,7 +138,7 @@ aug_seq = iaa.Sequential([
     iaa.OneOf([
         iaa.AdditiveGaussianNoise(scale=(0.0, 0.025 * 255), per_channel=0.5),
         iaa.MultiplyElementwise((0.75, 1.25)),
-        iaa.AddElementwise((-40,40), per_channel=0.5),
+        iaa.AddElementwise((-40, 40), per_channel=0.5),
         iaa.Dropout((0, 0.2), per_channel=0.5),
         iaa.CoarseDropout((0.0, 0.2), size_percent=(0.4, 0.75), per_channel=0.5)
     ])
