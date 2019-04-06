@@ -20,7 +20,7 @@
 ## Traffic signs
 - what's special about them? (high contrast, basic shapes)
 - categories (prohibitory, informative, ...)
-- [Vienna Convention on Road Signs and Signals](https://en.wikipedia.org/wiki/Vienna_Convention_on_Road_Signs_and_Signals)[link](http://www.unece.org/fileadmin/DAM/trans/conventn/signalse.pdf)
+- [Vienna Convention on Road Signs and Signals](https://en.wikipedia.org/wiki/Vienna_Convention_on_Road_Signs_and_Signals) [(link)](http://www.unece.org/fileadmin/DAM/trans/conventn/signalse.pdf)
 - emphasize that the main use application is for autonomous vehicles
 - possibly what's special about Czech signs
 ## Used data sets - which signs were selected
