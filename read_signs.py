@@ -128,7 +128,7 @@ _czech_to_final = {'0': 38, '1': 81, '2': 82, '3': 1, '4': 39, '5': 83, '6': 84,
                    '11': 7, '12': 79, '13': 86, '14': 87, '15': 88, '16': 89}
 
 
-# final classes with very few signs: 12, 18, 64, 65, 72, 87, 88, 89, 90, 91
+# final classes with very few signs: 12, 18, 64, 65, 72, 90, 91
 # also 48, 83 and 84 but these can be augmented from other classes
 
 
