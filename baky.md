@@ -24,6 +24,7 @@
     - dirt or graffiti
     - obstructed parts (this is somewhat similar to the previous item)
     - rotation
+    - low resolution
 * related works
     - other approaches
         - color-based
