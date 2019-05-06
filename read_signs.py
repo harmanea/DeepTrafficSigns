@@ -201,13 +201,16 @@ def read_dataset(path):
     images = []
     labels = []
 
+    print('Loading data set')
     for c in range(_FINAL_DATASET_NUMBER_OF_CLASSES):
+        print(c,'/', _FINAL_DATASET_NUMBER_OF_CLASSES - 1)
         dir_name = path + '/' + format(c, '05d')
         for f in os.listdir(dir_name):
             img = Image.open(dir_name + '/' + f)
             images.append(numpy.array(img))
-            labels.append(str(c))
+            labels.append(c)
 
+    print('Data set loaded')
     return images, labels
 
 # one of each [images[labels.index(str(n))] for n in range(_FINAL_DATASET_NUMBER_OF_CLASSES)]

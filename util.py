@@ -14,3 +14,32 @@ def show_images(images, axes=True):
         plt.imshow(images[i])
 
     plt.show()
+
+
+def dataset_stats(images, labels):
+    min_size = 100000
+    max_size = 0
+
+    x, y = 0, 0
+
+    for image in images:
+        size = image.shape[0] * image.shape[1]
+        if size < min_size:
+            min_size = size
+            min_height = image.shape[0]
+            min_width = image.shape[1]
+        elif size > max_size:
+            max_size = size
+            max_height = image.shape[0]
+            max_width = image.shape[1]
+
+        x += image.shape[0]
+        y += image.shape[1]
+
+    x /= len(images)
+    y /= len(images)
+
+    print(f'Number of images: {len(images)}')
+    print(f'Min size: {min_height}x{min_width}px')
+    print(f'Max size: {max_height}x{max_width}px')
+    print(f'Average size: {x}x{y}px')
