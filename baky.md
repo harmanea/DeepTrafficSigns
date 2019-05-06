@@ -24,6 +24,7 @@
     - dirt or graffiti
     - obstructed parts (this is somewhat similar to the previous item)
     - rotation
+    - low resolution
 * related works
     - other approaches
         - color-based
@@ -60,7 +61,7 @@
     - how to measure performance
     - augmenting the data set
     
-# Methodology
+# Data Preparation
 
 ### Analyze the data set
 * which signs I chose and why
@@ -88,6 +89,9 @@
         - light effects (flares)
         - noise (why dropout is better in the model itself)
 
+
+# Methodology
+
 ### Model
 * language & framework (Python + TensorFlow/Keras)
 * architecture
@@ -95,6 +99,12 @@
 * training
     - metacentrum
     
+# Experiments
+
+* hypothesis
+* description
+* conclusion (hypothesis ok / not ok)
+
 # Results and discussion
 
 ### Results
@@ -106,11 +116,12 @@
 ### Discussion
 * which signs were problematic (and why)
 * visualization ([Lucid](https://github.com/tensorflow/lucid))
+* what could be improved
+* other possible hypotheses
 
 # Conclusion
 * which goals were achieved
-* what could be improved
-    - future work (master thesis?)
+* future work (master thesis?)
 
 # Attachments
 - list of all traffic signs
