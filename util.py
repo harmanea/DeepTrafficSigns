@@ -1,14 +1,14 @@
 import matplotlib.pyplot as plt
 
 
-def show_images(images, axes=True):
+def show_images(images: list, axes: bool = True) -> None:
     n = len(images)
-    cols = int(n**0.5)
+    cols = int(n ** 0.5)
     rows = n // cols + (1 if n % cols > 0 else 0)
 
     fig = plt.figure(figsize=(8, 8))
     for i in range(n):
-        ax = fig.add_subplot(rows, cols, i+1)
+        ax = fig.add_subplot(rows, cols, i + 1)
         if not axes:
             ax.axis('off')
         plt.imshow(images[i])
@@ -16,7 +16,7 @@ def show_images(images, axes=True):
     plt.show()
 
 
-def dataset_stats(images, labels):
+def dataset_stats(images: list, labels: list) -> None:
     min_size = 100000
     max_size = 0
 
@@ -43,3 +43,19 @@ def dataset_stats(images, labels):
     print(f'Min size: {min_height}x{min_width}px')
     print(f'Max size: {max_height}x{max_width}px')
     print(f'Average size: {x}x{y}px')
+
+
+def hist_values(labels: list, classes: int, print_coordinates=False) -> list:
+    counts = [0 for _ in range(classes)]
+
+    for label in labels:
+        counts[int(label)] += 1
+
+    if print_coordinates:
+        print('coordinates{')
+        for i in range(classes):
+            print(f'({i}, {counts[i]})')
+
+        print('};')
+
+    return counts

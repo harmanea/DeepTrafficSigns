@@ -4,10 +4,12 @@ TO DO:
    * ~~posunout kapitolu czech data set pred final~~
    * **pro zatim jen prohozeny kapitoly czech data set a final data set, na zacatku czech data set je motivace, ktera to vysvetluje**
 
-* zkonsolidovat kapitolu czech data set
-   * hlavne motivace a vysledek
-    * mozna nejake problemy
-    * histogram
+* ~~zkonsolidovat kapitolu czech data set~~
+   * ~~hlavne motivace a vysledek~~
+   * ~~mozna nejake problemy~~
+        * **jedine kdyby byl cas na konci**
+   * ~~histogram~~
+        * **mozna bude potreba jeste trochu upravit**
 
 * sepsat analyzu final data setu
     * vysvetlit jak a proc jsem z tech dostupnych dat tenhle vytvoril
