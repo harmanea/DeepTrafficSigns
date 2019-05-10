@@ -11,11 +11,14 @@ TO DO:
    * ~~histogram~~
         * **mozna bude potreba jeste trochu upravit**
 
-* sepsat analyzu final data setu
-    * vysvetlit jak a proc jsem z tech dostupnych dat tenhle vytvoril
-    * vlastnosti data setu
-        * histogram
-        * problemy
+* ~~sepsat analyzu final data setu~~
+    * ~~vysvetlit jak a proc jsem z tech dostupnych dat tenhle vytvoril~~
+    * ~~vlastnosti data setu~~
+        * ~~histogram~~
+            * **mozna bude potreba jeste trochu upravit**
+        * ~~problemy~~
+    * **mozna pridat obrazky**
+    * **upravit formatovani**
 
 * zapracovat komentare ke kapitole preprocessing
 
@@ -65,5 +68,9 @@ TO DO:
 * sepsat abstrakt
 
 * vyresit prilohy
+
+* sjednotit
+    * seznamy (itemize, enumerate, paragraphs)
+    * jmena znacek (CamelCase, bold, ...)
 
 * jazykova korekce

@@ -94,7 +94,7 @@ def rotate180(image):
     return rotate(image, 180)
 
 
-def to_grayscale(image):
+def to_greyscale(image):
     return 0.299 * image[:, :, 0] + 0.587 * image[:, :, 1] + 0.114 * image[:, :, 2]
 
 
