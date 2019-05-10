@@ -1,7 +1,8 @@
 TO DO:
-* vyresit kam dat kapitolu o czech data setu tak, aby to davalo smysl
-   * nejspis pridat podkapitolku do The Data a vysvetlit proc jsem dodelal svuj dataset
-   * posunout kapitolu czech data set pred final
+* ~~vyresit kam dat kapitolu o czech data setu tak, aby to davalo smysl~~
+   * ~~nejspis pridat podkapitolku do The Data a vysvetlit proc jsem dodelal svuj dataset~~
+   * ~~posunout kapitolu czech data set pred final~~
+   * **pro zatim jen prohozeny kapitoly czech data set a final data set, na zacatku czech data set je motivace, ktera to vysvetluje**
 
 * zkonsolidovat kapitolu czech data set
    * hlavne motivace a vysledek
