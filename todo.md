@@ -20,12 +20,14 @@ TO DO:
     * **mozna pridat obrazky**
     * **upravit formatovani**
 
-* zapracovat komentare ke kapitole preprocessing
+* ~~zapracovat komentare ke kapitole preprocessing~~
+    * **tohle bude potreba jeste projit az budou jasny experimenty**
 
 * sepsat kapitolu o metodice
     * model
         * proc takova architektura?
-        * obrazek
+        * ~~obrazek~~
+            * **mozna budou potreba drobne upravy**
     * trenovani (samostatna kapitola?)
         * MetaCentrum?
 
