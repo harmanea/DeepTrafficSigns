@@ -31,9 +31,9 @@ TO DO:
     * ~~trenovani (samostatna kapitola?)~~
         * **MetaCentrum?**
 
-* sepsat related work
-    * idealne podle nejakeho overview clanku
-    * nemusi byt super do hloubky
+* ~~sepsat related work~~
+    * ~~idealne podle nejakeho overview clanku~~
+    * ~~nemusi byt super do hloubky~~
 
 * sepsat motivaci do uvodu
 
@@ -69,10 +69,15 @@ TO DO:
 
 * sepsat abstrakt
 
+* sepsat dedication
+
 * vyresit prilohy
+
+* vyresit citace
 
 * sjednotit
     * seznamy (itemize, enumerate, paragraphs)
     * jmena znacek (CamelCase, bold, ...)
+    * nazvy kapitol
 
 * jazykova korekce
