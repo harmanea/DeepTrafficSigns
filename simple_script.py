@@ -14,6 +14,7 @@ _INPUT_SHAPE = (32, 32, 3)
 rnd.seed(123)
 tf.random.set_random_seed(123)
 tf.set_random_seed(123)
+np.random.seed(123)
 
 
 def read_dataset(path):
@@ -24,7 +25,7 @@ def read_dataset(path):
 
     print('Loading data set')
     for c in range(_NUMBER_OF_CLASSES):
-        print(c,'/', str(_NUMBER_OF_CLASSES - 1))
+        print(c, '/', str(_NUMBER_OF_CLASSES - 1))
         dir_name = path + '/' + format(c, '05d')
         images = []
         for f in os.listdir(dir_name):
@@ -75,7 +76,8 @@ def build_baseline_model():
     model.add(keras.layers.Dropout(0.5))
     model.add(keras.layers.Dense(_NUMBER_OF_CLASSES, activation=keras.activations.softmax, name='dense_softmax'))
 
-    model.compile(optimizer=keras.optimizers.Adam(), loss=keras.losses.sparse_categorical_crossentropy, metrics=['acc'])
+    model.compile(optimizer=keras.optimizers.Adam(), loss=keras.losses.sparse_categorical_crossentropy,
+                  metrics=[keras.metrics.sparse_categorical_accuracy])
 
     return model
 
@@ -95,7 +97,8 @@ if __name__ == '__main__':
 
     model = build_baseline_model()
 
-    history = model.fit(train_images, train_labels, validation_data=(test_images, test_labels), batch_size=64, epochs=10)
+    history = model.fit(train_images, train_labels, validation_data=(test_images, test_labels), batch_size=64,
+                        epochs=10, )
     print('\nhistory:', history.history)
 
     model.save(os.path.join(argv[1], datetime.now().strftime('%Y-%m-%d_%H:%M:%S') + '.h5'))

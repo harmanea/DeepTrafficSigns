@@ -94,12 +94,27 @@ def rotate180(image):
     return rotate(image, 180)
 
 
-def to_greyscale(image):
+def to_grayscale(image):
     return 0.299 * image[:, :, 0] + 0.587 * image[:, :, 1] + 0.114 * image[:, :, 2]
 
 
 def normalize(image):
     return image / 255.0
+
+
+def image_histogram_equalization(image, number_bins=256):
+    # from http://www.janeriksolem.net/2009/06/histogram-equalization-with-python-and.html
+    # taken from https://stackoverflow.com/a/3823822
+
+    # get image histogram
+    image_histogram, bins = np.histogram(image.flatten(), number_bins, density=True)
+    cdf = image_histogram.cumsum() # cumulative distribution function
+    cdf = 255 * cdf / cdf[-1] # normalize
+
+    # use linear interpolation of cdf to find new pixel values
+    image_equalized = np.interp(image.flatten(), bins[:-1], cdf)
+
+    return image_equalized.reshape(image.shape)
 
 
 # an example augmentation sequence using imgaug library
