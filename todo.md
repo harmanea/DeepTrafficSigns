@@ -23,13 +23,13 @@ TO DO:
 * ~~zapracovat komentare ke kapitole preprocessing~~
     * **tohle bude potreba jeste projit az budou jasny experimenty**
 
-* sepsat kapitolu o metodice
-    * model
-        * proc takova architektura?
-        * ~~obrazek~~
-            * **mozna budou potreba drobne upravy**
-    * trenovani (samostatna kapitola?)
-        * MetaCentrum?
+* ~~sepsat kapitolu o metodice~~
+    * ~~model~~
+    * ~~proc takova architektura?~~
+    * ~~obrazek~~
+        * **mozna budou potreba drobne upravy**
+    * ~~trenovani (samostatna kapitola?)~~
+        * **MetaCentrum?**
 
 * sepsat related work
     * idealne podle nejakeho overview clanku
