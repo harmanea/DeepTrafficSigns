@@ -9,7 +9,6 @@ import random as rnd
 from datetime import datetime
 
 _NUMBER_OF_CLASSES = 93
-_INPUT_SHAPE = (32, 32)
 
 _flip_horizontally = [(0, 0), (1, 1), (3, 3), (7, 7), (8, 8), (34, 35), (39, 39), (41, 42), (43, 44), (45, 45),
                       (47, 47), (48, 49), (50, 50), (51, 51), (54, 54), (62, 62), (63, 63), (65, 65), (67, 67),
@@ -43,7 +42,7 @@ def read_dataset(path: str) -> list:
     return images
 
 
-def build_baseline_model(input_shape: tuple):
+def build_model(input_shape: tuple):
     model = keras.models.Sequential()
 
     model.add(
@@ -65,7 +64,7 @@ def build_baseline_model(input_shape: tuple):
     model.add(keras.layers.Dense(_NUMBER_OF_CLASSES, activation=keras.activations.softmax, name='dense_softmax'))
 
     model.compile(optimizer=keras.optimizers.Adam(), loss=keras.losses.sparse_categorical_crossentropy,
-                  metrics=[keras.metrics.sparse_categorical_accuracy])
+                  metrics=['sparse_categorical_accuracy'])
 
     return model
 
@@ -184,6 +183,7 @@ if __name__ == '__main__':
 
     batch_size = 64
     epochs = 10
+    input_shape = (32, 32)
 
     do_grayscale = argv[2] == 'True'
     do_equalization = argv[3] == 'True'
@@ -195,7 +195,9 @@ if __name__ == '__main__':
     print('Validation ratio:', validation_ratio)
     print('Batch size:', batch_size)
     print('Epochs:', epochs)
+    print('Input size:', input_shape)
     print('Grayscale:', do_grayscale)
+    print('Histogram equalization:', do_equalization)
     print('Normalize:', do_normalize)
     print('Augment:', do_augment)
     print()
@@ -203,7 +205,7 @@ if __name__ == '__main__':
     images = read_dataset(path)
 
     print('Resizing images')
-    images = [[resize(image, _INPUT_SHAPE) for image in c] for c in images]
+    images = [[resize(image, input_shape) for image in c] for c in images]
 
     if do_grayscale:
         print('Converting images to grayscale')
@@ -235,7 +237,7 @@ if __name__ == '__main__':
         validation_images = np.expand_dims(validation_images, 3)
         train_images = np.expand_dims(train_images, 3)
 
-    model = build_baseline_model(_INPUT_SHAPE + (1 if do_grayscale else 3,))
+    model = build_model(input_shape + (1 if do_grayscale else 3,))
 
     history = model.fit(train_images, train_labels,
                         validation_data=(validation_images, validation_labels),
@@ -243,7 +245,8 @@ if __name__ == '__main__':
                         epochs=epochs)
     print('\nhistory:', history.history)
 
-    model.evaluate(test_images, test_labels)
+    eval = model.evaluate(test_images, test_labels)
+    print('\neval:', eval)
 
     name = 'gray' + ('T' if do_grayscale else 'F') + 'hist' + ('T' if do_equalization else 'F') + 'norm' + (
         'T' if do_normalize else 'F') + 'aug' + ('T' if do_augment else 'F') + '_' + datetime.now().strftime(

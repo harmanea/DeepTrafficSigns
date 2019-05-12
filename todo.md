@@ -51,7 +51,7 @@ TO DO:
     * final data set
     * methodology
 
-* zanalyzovat kolik zbyva casu a rozhodnout se, jestli pridat jeste nejake experimenty
+* ~~zanalyzovat kolik zbyva casu a rozhodnout se, jestli pridat jeste nejake experimenty~~
     * pokud ano, pak:
         * pustit je v metacentru
         * pripadne doplnit metodiku
