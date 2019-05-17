@@ -1,9 +1,11 @@
+#!/usr/bin/env python3
 import matplotlib.pyplot as plt
 import csv
 import os
 from pathlib import Path
 from PIL import Image
 import numpy
+from sys import argv, stderr
 
 _GERMAN_DATASET_NUMBER_OF_CLASSES = 43
 _BELGIAN_DATASET_NUMBER_OF_CLASSES = 62  # + 10 artificial ones
@@ -184,7 +186,7 @@ def make_final_dir(final, path):
 
     for i in range(_FINAL_DATASET_NUMBER_OF_CLASSES):
         in_dir = out_dir + '/' + format(i, '05d')
-        print(f'Creating dir {in_dir} [{len(final[i])} images]')
+        print('Creating dir', in_dir, '[' + len(final[i]) + 'images]')
         os.makedirs(in_dir)
 
         for j in range(len(final[i])):
@@ -198,20 +200,9 @@ def pipeline(path):
     print('*DONE*')
 
 
-def read_dataset(path):
-    images = []
-    labels = []
+if __name__ == '__main__':
+    if len(argv) < 2 or not os.path.exists(argv[1]):
+        print('usage:', argv[0], 'path/to/datasets', file=stderr)
+        exit(1)
 
-    print('Loading data set')
-    for c in range(_FINAL_DATASET_NUMBER_OF_CLASSES):
-        print(c,'/', _FINAL_DATASET_NUMBER_OF_CLASSES - 1)
-        dir_name = path + '/' + format(c, '05d')
-        for f in os.listdir(dir_name):
-            img = Image.open(dir_name + '/' + f)
-            images.append(numpy.array(img))
-            labels.append(c)
-
-    print('Data set loaded')
-    return images, labels
-
-# one of each [images[labels.index(str(n))] for n in range(_FINAL_DATASET_NUMBER_OF_CLASSES)]
+    pipeline(argv[1])

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 from sys import argv, stderr
-from PIL import Image
+from PIL import Image, ImageOps
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
@@ -73,7 +73,6 @@ def augment_images(images):
     images = augment(images, _flip_horizontally, flip_horizontally)
     images = augment(images, _flip_vertically, flip_vertically)
     images = augment(images, _rotate_180, rotate180)
-    # images = augment_arrows(images, _rotate_arrows)
 
     return images
 
@@ -92,18 +91,6 @@ def augment(images, list_of_pairs, method):
     return [images[c] + new_images[c] for c in range(_NUMBER_OF_CLASSES)]
 
 
-def augment_arrows(images, list_of_arrows):
-    new_images = [[] for _ in range(_NUMBER_OF_CLASSES)]
-
-    for first_cat, first_angle in list_of_arrows:
-        for second_cat, second_angle in list_of_arrows:
-            if first_cat != second_cat:
-                for image in images[first_cat]:
-                    new_images[second_cat].append(rotate(image, first_angle - second_angle))
-
-    return [images[c] + new_images[c] for c in range(_NUMBER_OF_CLASSES)]
-
-
 def flip_horizontally(image):
     return np.fliplr(image)
 
@@ -115,11 +102,6 @@ def flip_vertically(image):
 def resize(image, size, method=Image.ANTIALIAS):
     img = Image.fromarray(image)
     return np.array(img.resize(size, method))
-
-
-def rotate(image, angle):
-    img = Image.fromarray(image)
-    return np.array(img.rotate(angle))
 
 
 def rotate180(image):
@@ -172,8 +154,8 @@ def split_images(images, ratio):
 
 
 if __name__ == '__main__':
-    if len(argv) != 6:
-        print('usage: ', argv[0], ' path/to/data grayscale hist_equalization normalize augment', file=stderr)
+    if len(argv) != 5:
+        print('usage: ', argv[0], ' path/to/data grayscale hist_equalization augment', file=stderr)
         exit(1)
 
     path = argv[1]
@@ -187,8 +169,7 @@ if __name__ == '__main__':
 
     do_grayscale = argv[2] == 'True'
     do_equalization = argv[3] == 'True'
-    do_normalize = argv[4] == 'True'
-    do_augment = argv[5] == 'True'
+    do_augment = argv[4] == 'True'
 
     print('Running with configuration:')
     print('Testing ratio:', testing_ratio)
@@ -198,7 +179,6 @@ if __name__ == '__main__':
     print('Input size:', input_shape)
     print('Grayscale:', do_grayscale)
     print('Histogram equalization:', do_equalization)
-    print('Normalize:', do_normalize)
     print('Augment:', do_augment)
     print()
 
@@ -213,11 +193,10 @@ if __name__ == '__main__':
 
     if do_equalization:
         print('Applying histogram equalization')
-        images = [[image_histogram_equalization(image).astype(int) for image in c] for c in images]
+        images = [[image_histogram_equalization(image) for image in c] for c in images]
 
-    if do_normalize:
-        print('Normalizing images')
-        images = [[normalize(image) for image in c] for c in images]
+    print('Normalizing images')
+    images = [[normalize(image) for image in c] for c in images]
 
     test_images, train_images = split_images(images, testing_ratio)
     del images
@@ -248,9 +227,7 @@ if __name__ == '__main__':
     eval = model.evaluate(test_images, test_labels)
     print('\neval:', eval)
 
-    name = 'gray' + ('T' if do_grayscale else 'F') + 'hist' + ('T' if do_equalization else 'F') + 'norm' + (
-        'T' if do_normalize else 'F') + 'aug' + ('T' if do_augment else 'F') + '_' + datetime.now().strftime(
-        '%Y-%m-%d_%H:%M:%S') + '.h5'
+    name = datetime.now().strftime('%Y-%m-%d_%H:%M:%S') + '.h5'
 
     print('Saving model', name)
     model.save(os.path.join(path, name))

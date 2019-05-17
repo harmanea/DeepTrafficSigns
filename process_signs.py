@@ -104,7 +104,7 @@ def normalize(image):
 
 def image_histogram_equalization(image, number_bins=256):
     # from http://www.janeriksolem.net/2009/06/histogram-equalization-with-python-and.html
-    # taken from https://stackoverflow.com/a/3823822
+    # taken from https://stackoverflow.com/a/28520445
 
     # get image histogram
     image_histogram, bins = np.histogram(image.flatten(), number_bins, density=True)
