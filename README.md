@@ -11,8 +11,8 @@ The train.py script begins the training of a new model with the architecture pro
 
 Example usage:
 
-   python3 train.py datasets/data/ True False False
-   # for a greyscale model with no histogram normalisation and no data augmentation
+    python3 train.py datasets/data/ True False False
+    # for a greyscale model with no histogram normalisation and no data augmentation
 
 ### label_image.py
 
@@ -20,17 +20,17 @@ The label_image.py script loads a model and tries to classify the provided image
 
 Example usage:
 
-   python3 scripts/label_image.py
-   # to label the provided example_sign.jpg
+    python3 scripts/label_image.py
+    # to label the provided example_sign.jpg
    
-   python3 scripts/label_image.py --image=another_image.jpg
-   # to label a different image
+    python3 scripts/label_image.py --image=another_image.jpg
+    # to label a different image
    
-   python3 scripts/label_image.py --model=path/to/another_model.h5
-   # to load a different keras model for the classification
+    python3 scripts/label_image.py --model=path/to/another_model.h5
+    # to load a different keras model for the classification
    
-   python3 scripts/label_image.py --grayscale=True --normalize=True
-   # converts the labeled image to grayscale and applies histogram equalization
+    python3 scripts/label_image.py --grayscale=True --normalize=True
+    # converts the labeled image to grayscale and applies histogram equalization
    
-   python3 scripts/label_image.py --help
-   # for more information and options
+    python3 scripts/label_image.py --help
+    # for more information and options
