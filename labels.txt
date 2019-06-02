@@ -1,0 +1,93 @@
+křižovatka s vedlejší pozemní komunikací; značka upravující přednost
+hlavní pozemní komunikace; značka upravující přednost
+konec hlavní pozemní komunikace; značka upravující přednost
+dej přednost v jízdě; značka upravující přednost
+stůj, dej přednost v jízdě; značka upravující přednost
+přednost protijedoucích vozidel; značka upravující přednost
+přednost před protijedoucími vozidly; značka upravující přednost
+zákaz vjezdu všech vozidel v obou směrech; zákazová značka
+zákaz vjezdu všech vozidel; zákazová značka
+zákaz vjezdu všech motorových vozidel s výjimkou motocyklů; zákazová značka
+zákaz vjezdu nákladních automobilů; zákazová značka
+zákaz vjezdu jízdních kol; zákazová značka
+zákaz vjezdu potahových vozidel; zákazová značka
+zákaz vjezdu všech motorových vozidel; zákazová značka
+nejvyšší dovolená rychlost 5; zákazová značka
+nejvyšší dovolená rychlost 10; zákazová značka
+nejvyšší dovolená rychlost 15; zákazová značka
+nejvyšší dovolená rychlost 20; zákazová značka
+nejvyšší dovolená rychlost 25; zákazová značka
+nejvyšší dovolená rychlost 30; zákazová značka
+nejvyšší dovolená rychlost 40; zákazová značka
+nejvyšší dovolená rychlost 50; zákazová značka
+nejvyšší dovolená rychlost 60; zákazová značka
+nejvyšší dovolená rychlost 70; zákazová značka
+nejvyšší dovolená rychlost 80; zákazová značka
+nejvyšší dovolená rychlost 90; zákazová značka
+nejvyšší dovolená rychlost 100; zákazová značka
+nejvyšší dovolená rychlost 120; zákazová značka
+konec nejvyšší dovolené rychlosti; zákazová značka
+zákaz předjíždění; zákazová značka
+konec zákazu předjíždění; zákazová značka
+zákaz předjíždění pro nákladní automobily; zákazová značka
+konec zákazu předjíždění pro nákladní automobily; zákazová značka ???
+zákaz zvukových výstražných znamení; zákazová značka
+zákaz odbočování vpravo; zákazová značka
+zákaz odbočování vlevo; zákazová značka
+zákaz otáčení; zákazová značka
+konec všech zákazů; zákazová značka
+zákaz zastavení; zákazová značka
+zákaz stání; zákazová značka
+zákaz vstupu chodců; zákazová značka
+zatáčka vpravo; výstražná značka
+zatáčka vlevo; výstražná značka
+dvojitá zatáčka, první vpravo; výstražná značka
+dvojitá zatáčka, první vlevo; výstražná značka
+křižovatka; výstražná značka
+křižovatka s kruhovým objezdem; výstražná značka
+zúžená vozovka, z obou stran; výstražná značka
+zůžená vozovka, zleva; výstražná značka
+zůžená vozovka, zprava; výstražná značka
+nerovnost vozovky; výstražná značka
+zpomalovací práh; výstražná značka
+nebezpečí smyku; výstražná značka
+provoz v obou směrech; výstražná značka
+světelné signály; výstražná značka
+přechod pro chodce; výstražná značka
+chodci; výstražná značka
+děti; výstražná značka
+zvířata; výstražná značka
+zvěř; výstražná značka
+práce na silnici; výstražná značka
+cyklisté; výstražná značka
+jiné nebezpečí; výstražná značka
+náledí; výstražná značka
+nebezpečná krajnice; výstražná značka
+železniční přejezd se závorami; výstražná značka
+kruhový objezd; příkazová značka
+přikázaný směr jízdy přímo; příkazová značka
+přikázaný směr jízdy vpravo; příkazová značka
+přikázaný směr jízdy vlevo; příkazová značka
+přikázaný směr jízdy přímo a vpravo; příkazová značka
+přikázaný směr jízdy přímo a vlevo; příkazová značka
+přikázaný směr jízdy vpravo a vlevo; příkazová značka
+přikázaný směr jízdy zde vpravo; příkazová značka
+přikázaný směr jízdy zde vlevo; příkazová značka
+přikázaný směr objíždění vpravo; příkazová značka
+přikázaný směr objíždění vlevo; příkazová značka
+přikázaný směr objíždění vpravo a vlevo; příkazová značka
+stezka pro cyklisty; příkazová značka
+stezka pro chodce a cyklisty společná; příkazová značka
+jednosměrný provoz; informativní značka
+přechod pro chodce; informativní značka
+slepá pozemní komunikace; informativní značka
+návěst před slepou pozemní komunikaci vpravo; informativní značka
+návěst před slepou pozemní komunikace vlevo; informativní značka
+parkoviště; informativní značka
+dálnice; informativní značka
+konec dálnice; informativní značka
+silnice pro motorová vozidla; informativní značka
+konec slnice pro motorová vozidla; informativní značka
+obytná zóna; informativní značka
+konec obytné zóny; informativní značka
+zpomalovací práh; informativní značka
